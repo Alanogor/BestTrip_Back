@@ -5,7 +5,6 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.inti.service.interfaces.IRecommandationService;
-
 @RestController
 @CrossOrigin
 public class RecommandationController {
