@@ -27,7 +27,7 @@ public class Experience implements Serializable{
 	@OneToMany(mappedBy = "experience")
 	private List<CommentaireExperience> comExperience=new ArrayList<>();
 	@ManyToOne
-	private User user;
+	private User userExp;
 	
 	
 	public Experience() {}

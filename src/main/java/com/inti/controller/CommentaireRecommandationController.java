@@ -9,6 +9,5 @@ import com.inti.service.interfaces.ICommentaireRecommandationService;
 @RestController
 @CrossOrigin
 public class CommentaireRecommandationController {
-	@Autowired 
-	ICommentaireRecommandationService commentaireRecommendationService;
+
 }

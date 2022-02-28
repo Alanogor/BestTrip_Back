@@ -6,7 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.inti.entities.CommentaireExperience;
-import com.inti.repository.CommentaireExperienceRepository;
+import com.inti.repositories.CommentaireExperienceRepository;
 import com.inti.service.interfaces.ICommentaireExperience;
 
 @Service
