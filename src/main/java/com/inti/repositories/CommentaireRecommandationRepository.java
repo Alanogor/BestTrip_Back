@@ -9,8 +9,4 @@ import com.inti.entities.CommentaireRecommandation;
 @Repository
 public interface CommentaireRecommandationRepository extends JpaRepository<CommentaireRecommandation, Long>{
 
-import org.springframework.stereotype.Repository;
-
-
-
 }
