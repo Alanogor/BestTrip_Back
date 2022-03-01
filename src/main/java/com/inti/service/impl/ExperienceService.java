@@ -6,7 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.inti.entities.Experience;
-import com.inti.repository.ExperienceRepository;
+import com.inti.repositories.ExperienceRepository;
 import com.inti.service.interfaces.IExperienceService;
 
 @Service
