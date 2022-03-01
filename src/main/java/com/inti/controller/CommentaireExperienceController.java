@@ -22,27 +22,27 @@ public class CommentaireExperienceController {
 	@Autowired
 	CommentaireExperienceService commentaireExperienceService;
 	
-	@GetMapping("/commentaire_experience")
+	@GetMapping("commentaire_experience")
 	public List<CommentaireExperience> findAll() {
 		return commentaireExperienceService.findAll();
 	}
 	
-	@GetMapping("/commentaire_experience/{id}")
+	@GetMapping("commentaire_experience/{id}")
 	public CommentaireExperience findOne(@PathVariable("id") Long id) {
 		return commentaireExperienceService.findOne(id);
 	}
 	
-	@DeleteMapping("/commentaire_experience/{id}")
+	@DeleteMapping("commentaire_experience/{id}")
 	public void delete(@PathVariable("id") Long id) {
 		commentaireExperienceService.delete(id);
 	}
 	
-	@PostMapping("/commentaire_experience")
+	@PostMapping("commentaire_experience")
 	public CommentaireExperience save(@RequestBody CommentaireExperience obj) {
 		return commentaireExperienceService.save(obj);
 	}
 	
-	@PutMapping("/commentaire_experience/{id}")
+	@PutMapping("commentaire_experience/{id}")
 	public CommentaireExperience update(@RequestBody CommentaireExperience obj,@PathVariable("id") Long id) {
 		obj.setIdComExperience(id);
 		return commentaireExperienceService.save(obj);

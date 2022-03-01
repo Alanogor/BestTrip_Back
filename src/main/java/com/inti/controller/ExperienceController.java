@@ -22,27 +22,27 @@ public class ExperienceController {
 	@Autowired
 	ExperienceService experienceService;
 	
-	@GetMapping("/experience")
+	@GetMapping("experience")
 	public List<Experience> findAll() {
 		return experienceService.findAll();
 	}
 	
-	@GetMapping("/experience/{id}")
+	@GetMapping("experience/{id}")
 	public Experience findOne(@PathVariable("id")Long id) {
 		return experienceService.findOne(id);
 	}
 	
-	@PostMapping("/experience")
+	@PostMapping("experience")
 	public Experience save(@RequestBody Experience obj) {
 		return experienceService.save(obj);
 	}
 	
-	@DeleteMapping("/experience/{id}")
+	@DeleteMapping("experience/{id}")
 	public void delete(@PathVariable("id")Long id) {
 		experienceService.delete(id);
 	}
 	
-	@PutMapping("/experience/{id}")
+	@PutMapping("experience/{id}")
 	public Experience update(@PathVariable("id")Long id,@RequestBody Experience obj) {
 		obj.setIdExperience(id);
 		return experienceService.save(obj);
