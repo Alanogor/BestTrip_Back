@@ -30,6 +30,11 @@ public class UserController {
 	public User findOne(@PathVariable("idU") Long idUser) { 
 		return userService.findOne(idUser);
 	}
+	
+	/*@GetMapping("users/{nomU}")
+	public User findByNom(@PathVariable("nomU") String nom) { 
+		return userService.findByNom(nom);
+	}*/
 
 	@PostMapping("users")
 	public User saveUser(@RequestBody User user) {
@@ -52,6 +57,7 @@ public class UserController {
 		currentUser.setRoles(user.getRoles());
 		return userService.save(currentUser);
 	}
+	
 	/*@GetMapping("users")
 	public int nbrUsers() {
 		return UserService.nbrUsers();
