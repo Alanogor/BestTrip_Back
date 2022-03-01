@@ -15,7 +15,7 @@ public class CommentaireGuide implements Serializable {
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Long idCommentaireGuide;
 	private String commentaireComGuide;
-	private int ratingGuide;
+	private int ratingComGuide;
 	
 	@ManyToOne
 	@JoinColumn(name="id_guide")
@@ -25,17 +25,17 @@ public class CommentaireGuide implements Serializable {
 		super();
 	}
 
-	public CommentaireGuide(String commentaireComGuide, int ratingGuide, Guide guide) {
+	public CommentaireGuide(String commentaireComGuide, int ratingComGuide, Guide guide) {
 		super();
 		this.commentaireComGuide = commentaireComGuide;
-		this.ratingGuide = ratingGuide;
+		this.ratingComGuide = ratingComGuide;
 		this.guide = guide;
 	}
 
-	public CommentaireGuide(String commentaireComGuide, int ratingGuide) {
+	public CommentaireGuide(String commentaireComGuide, int ratingComGuide) {
 		super();
 		this.commentaireComGuide = commentaireComGuide;
-		this.ratingGuide = ratingGuide;
+		this.ratingComGuide = ratingComGuide;
 	}
 
 	public Long getIdCommentaireGuide() {
@@ -54,12 +54,12 @@ public class CommentaireGuide implements Serializable {
 		this.commentaireComGuide = commentaireComGuide;
 	}
 
-	public int getRatingGuide() {
-		return ratingGuide;
+	public int getRatingComGuide() {
+		return ratingComGuide;
 	}
 
-	public void setRatingGuide(int ratingGuide) {
-		this.ratingGuide = ratingGuide;
+	public void setRatingComGuide(int ratingComGuide) {
+		this.ratingComGuide = ratingComGuide;
 	}
 
 	public Guide getGuide() {
@@ -73,7 +73,7 @@ public class CommentaireGuide implements Serializable {
 	@Override
 	public String toString() {
 		return "CommentaireGuide [idCommentaireGuide=" + idCommentaireGuide + ", commentaireComGuide="
-				+ commentaireComGuide + ", ratingGuide=" + ratingGuide + "]";
+				+ commentaireComGuide + ", ratingComGuide=" + ratingComGuide + "]";
 	}
 	
 	
