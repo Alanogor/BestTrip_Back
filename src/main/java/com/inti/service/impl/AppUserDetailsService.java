@@ -23,19 +23,19 @@ public class AppUserDetailsService implements UserDetailsService {
 	IUserService userService;
 	
 	@Override
-	public UserDetails loadUserByUsername(String nom) throws UsernameNotFoundException {
-		User user = userService.findByNom(nom);
+	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
+		User user = userService.findByUsername(username);
 		System.out.println(user.toString());
 		System.out.println(user.getRoles());
 		Set<Role> roles = user.getRoles();
 		Set<GrantedAuthority> authorities = new HashSet<GrantedAuthority>();
 		for (Role role : roles) {
-			authorities.add(new SimpleGrantedAuthority(role.getLibelle())); //les roles dans la variable authorities
+			authorities.add(new SimpleGrantedAuthority(role.getLibelle())); 
 		}
 		
 		UserDetail userDetail = new UserDetail();
-		userDetail.setuser(user); // l'user
-		userDetail.setAuthorities(authorities); // les profils
+		userDetail.setUser(user); 
+		userDetail.setAuthorities(authorities); 
 		return userDetail;
 	}
 

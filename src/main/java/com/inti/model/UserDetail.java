@@ -13,11 +13,11 @@ public class UserDetail implements UserDetails {
 	private User user;
 	private Set<GrantedAuthority> authorities = null;
 	
-	public User getuser() {
+	public User getUser() {
 		return user;
 	}
 
-	public void setuser(User user) {
+	public void setUser(User user) {
 		this.user = user;
 	}
 
