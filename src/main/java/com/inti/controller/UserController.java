@@ -3,6 +3,7 @@ package com.inti.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -20,6 +21,9 @@ import com.inti.service.interfaces.IUserService;
 public class UserController {
 	@Autowired 
 	IUserService userService;
+	
+	@Autowired
+	PasswordEncoder passwordEncoder;
 
 	@GetMapping("users") 
 	public List<User> findAll() {
@@ -31,16 +35,13 @@ public class UserController {
 		return userService.findOne(idUser);
 	}
 	
-	/*@GetMapping("users/{nomU}")
-	public User findByNom(@PathVariable("nomU") String nom) { 
-		return userService.findByNom(nom);
-	}*/
-
 	@PostMapping("users")
 	public User saveUser(@RequestBody User user) {
-		return userService.save(user);
+		User currentUser = new User(user.getNom(), user.getPrenom(),user.getUsername(), 
+				passwordEncoder.encode(user.getPassword()), user.getEmail());
+		return userService.save(currentUser);
 	}
-
+	
 	@DeleteMapping("users/{idUser}")
 	public void deleteUser(@PathVariable("idUser") Long idUser) {
 		userService.delete(idUser);

@@ -16,9 +16,9 @@ public class LoginController {
 	@Autowired
 	IUserService userService;
 	
-	@RequestMapping(value="/user")
+	@RequestMapping(value="/users")
 	public User login(Principal principal) {
-		return userService.findByNom(principal.getName());
+		return userService.findByUsername(principal.getName());
 	}
 
 }
