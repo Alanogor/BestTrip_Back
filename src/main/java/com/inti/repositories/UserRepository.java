@@ -8,7 +8,7 @@ import com.inti.entities.User;
 
 @Repository
 public interface UserRepository extends JpaRepository<User, Long> {
-	User findByNom(String nom);
+	User findByUsername(String username);
 
 	@Query(value = "SELECT count(*) FROM User", nativeQuery = true)
 	int nbrUsers();
