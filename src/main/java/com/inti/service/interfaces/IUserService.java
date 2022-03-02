@@ -13,7 +13,7 @@ public interface IUserService {
 
 	void delete(Long idUser);
 
-	User findByNom(String nom);
+	User findByUsername(String username);
 	
 	int nbrUsers();
 }
