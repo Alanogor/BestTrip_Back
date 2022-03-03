@@ -7,11 +7,11 @@ import com.inti.entities.User;
 public interface IUserService {
 	List<User> findAll();
 
-	User findOne(Long idUser);
+	User findOne(Long idUtilisateur);
 
 	User save(User User);
 
-	void delete(Long idUser);
+	void delete(Long idUtilisateur);
 
 	User findByUsername(String username);
 	

@@ -20,7 +20,7 @@ import javax.persistence.JoinColumn;
 public class User implements Serializable {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long idUser;
+	private Long idUtilisateur;
 	private String nom;
 	private String prenom;
 	//@Column(unique = true)
@@ -31,7 +31,7 @@ public class User implements Serializable {
 	private boolean enabled = true;
 	@ManyToMany(fetch = FetchType.EAGER)
 	@JoinTable(name = "profil", 
-	joinColumns = @JoinColumn(name="id_user", referencedColumnName="idUser"),
+	joinColumns = @JoinColumn(name="id_utilisateur", referencedColumnName="idUtilisateur"),
 	inverseJoinColumns = @JoinColumn(name="id_role", referencedColumnName="idRole"))
 	private Set<Role> roles = new HashSet<>();
 
@@ -55,12 +55,13 @@ public class User implements Serializable {
 		this.email = email;
 	}
 
+	
 	public Long getIdUtilisateur() {
-		return idUser;
+		return idUtilisateur;
 	}
 
-	public void setIdUtilisateur(Long idUser) {
-		this.idUser = idUser;
+	public void setIdUtilisateur(Long idUtilisateur) {
+		this.idUtilisateur = idUtilisateur;
 	}
 
 	public String getNom() {
@@ -129,9 +130,10 @@ public class User implements Serializable {
 
 	@Override
 	public String toString() {
-		return "User [idUser=" + idUser + ", nom=" + nom + ", prenom=" + prenom + ", username=" + username
-				+ ", password=" + password + ", email=" + email + ", newsLetter=" + newsLetter + ", enabled=" + enabled
-				+ ", roles=" + roles + "]";
+		return "User [idUtilisateur=" + idUtilisateur + ", nom=" + nom + ", prenom=" + prenom + ", username=" + username
+				+ ", password=" + password + ", email=" + email + "]";
 	}
+
+	
 
 }

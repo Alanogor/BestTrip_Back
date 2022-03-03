@@ -21,9 +21,9 @@ public class UserService implements IUserService {
 	}
 
 	@Override
-	public User findOne(Long idUser) {
+	public User findOne(Long idUtilisateur) {
 
-		return userRepository.findById(idUser).get();
+		return userRepository.findById(idUtilisateur).get();
 	}
 
 	@Override
@@ -33,8 +33,8 @@ public class UserService implements IUserService {
 	}
 
 	@Override
-	public void delete(Long idUser) {
-		userRepository.deleteById(idUser);
+	public void delete(Long idUtilisateur) {
+		userRepository.deleteById(idUtilisateur);
 
 	}
 
