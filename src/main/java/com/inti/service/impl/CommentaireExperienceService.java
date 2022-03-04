@@ -34,5 +34,10 @@ public class CommentaireExperienceService implements ICommentaireExperience{
 		commentaireExperienceRepository.deleteById(id);
 	}
 
+	@Override
+	public List<CommentaireExperience> findByCommentaire(Long id) {
+		return commentaireExperienceRepository.findByComment(id);
+	}
+
 
 }
