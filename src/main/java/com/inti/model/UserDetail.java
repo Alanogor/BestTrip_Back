@@ -1,5 +1,6 @@
-/*
-package com.inti.model;
+
+/*package com.inti.model;
+
 
 import java.util.Collection;
 import java.util.Set;
@@ -66,5 +67,5 @@ public class UserDetail implements UserDetails {
 		return true;
 	}
 
-}
-*/
+}*/
+
