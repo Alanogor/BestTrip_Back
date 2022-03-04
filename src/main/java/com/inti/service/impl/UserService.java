@@ -48,5 +48,5 @@ public class UserService implements IUserService {
 	public int nbrUsers() {
 		return userRepository.nbrUsers();
 	}
-
+	
 }
