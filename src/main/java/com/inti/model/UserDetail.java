@@ -1,3 +1,4 @@
+/*
 package com.inti.model;
 
 import java.util.Collection;
@@ -66,3 +67,4 @@ public class UserDetail implements UserDetails {
 	}
 
 }
+*/

@@ -1,3 +1,4 @@
+/*
 package com.inti.config;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -40,3 +41,4 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
             .csrf().disable();
         }
 }
+*/
