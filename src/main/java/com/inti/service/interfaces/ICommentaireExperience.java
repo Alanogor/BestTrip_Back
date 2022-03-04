@@ -12,4 +12,6 @@ public interface ICommentaireExperience{
 	CommentaireExperience save(CommentaireExperience obj);
 	
 	void delete(Long id);
+	
+	List<CommentaireExperience> findByCommentaire(Long id);
 }

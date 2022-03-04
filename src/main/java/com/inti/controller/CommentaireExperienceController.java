@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestAttribute;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -46,5 +47,10 @@ public class CommentaireExperienceController {
 	public CommentaireExperience update(@RequestBody CommentaireExperience obj,@PathVariable("id") Long id) {
 		obj.setIdComExperience(id);
 		return commentaireExperienceService.save(obj);
+	}
+	
+	@GetMapping("commentaire_experience_commentaire/{id}")
+	public List<CommentaireExperience> findByComment(@PathVariable("id") Long id){
+		return commentaireExperienceService.findByCommentaire(id);
 	}
 }
