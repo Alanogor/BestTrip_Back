@@ -4,7 +4,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
-/*import org.springframework.security.crypto.password.PasswordEncoder;*/
+import org.springframework.security.crypto.password.PasswordEncoder;
 
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -25,8 +25,8 @@ public class UserController {
 	IUserService userService;
 
 	
-	//@Autowired
-	//PasswordEncoder passwordEncoder;
+	@Autowired
+	PasswordEncoder passwordEncoder;
 
 
 	@GetMapping("users") 
@@ -35,24 +35,18 @@ public class UserController {
 	}
 
 	@GetMapping("users/{idU}")
-	public User findOne(@PathVariable("idU") Long idUser) { 
-		return userService.findOne(idUser);
+	public User findOne(@PathVariable("idU") Long idUtilisateur) { 
+		return userService.findOne(idUtilisateur);
 	}
 
 	
-	/*@PostMapping("users")
 
+	@PostMapping("users")
 	public User saveUser(@RequestBody User user) {
 		User currentUser = new User(user.getNom(), user.getPrenom(),user.getUsername(), 
 				passwordEncoder.encode(user.getPassword()), user.getEmail());
 		return userService.save(currentUser);
-
-	}*/
-	
-	@PostMapping("users")
-    public User saveUser(@RequestBody User user) {
-        return userService.save(user);
-    }
+	}
 
 	@DeleteMapping("users/{idUser}")
 	public void deleteUser(@PathVariable("idUser") Long idUser) {
