@@ -1,4 +1,6 @@
+
 package com.inti.config;
+
 
 import java.util.Arrays;
 import java.util.Collections;
@@ -36,7 +38,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 		http.authorizeRequests().anyRequest().permitAll().and().formLogin().permitAll().and().logout()
 		.logoutUrl("/logout").permitAll().and().httpBasic().and().csrf().disable();
         }
-	
+
 	@Bean
 	public FilterRegistrationBean simpleCorsFilter() {
 		UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
@@ -53,4 +55,5 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 		bean.setOrder(Ordered.HIGHEST_PRECEDENCE);
 		return bean;
 	}
+}
 }

@@ -10,7 +10,9 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.multipart.MultipartFile;
 
 import com.inti.entities.CommentaireGuide;
 import com.inti.entities.Guide;
@@ -37,9 +39,23 @@ public class GuideController {
 	}
 
 	@PostMapping("guide")
-	public Guide saveGuide(@RequestBody Guide guide) {
-		return guideService.save(guide);
-	}
+    public String saveGuide(@RequestParam ("descriptionG") String description, @RequestParam ("paysG")String pays, 
+            @RequestParam ("villeG") String ville, @RequestParam ("prix")String prix, @RequestParam ("fileU") MultipartFile file) {
+        try {
+            Guide currentGuide = new Guide();
+            currentGuide.setDescriptionGuide(description);
+            currentGuide.setPaysGuide(pays);
+            currentGuide.setVilleGuide(ville);
+            currentGuide.setPrixGuide(Float.parseFloat(prix));
+            currentGuide.setMediasGuide(file.getBytes());
+            guideService.save(currentGuide);
+            return "File uploaded successdully! filename"+file.getOriginalFilename();
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
+
+        return "fail maybe you had uploaded the file before or the file's size > 500kb";
+    }
 	
 	/*@PostMapping("guide")
 	public Guide saveGuide(@RequestBody Guide guide) {
