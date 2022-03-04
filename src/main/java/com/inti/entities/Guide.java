@@ -47,7 +47,6 @@ public class Guide implements Serializable {
 		this.mediasGuide = mediasGuide;
 	}
 
-
 	public Long getIdGuide() {
 		return idGuide;
 	}
@@ -98,17 +97,6 @@ public class Guide implements Serializable {
 	}
 
 
-	public byte[] getMedias() {
-		return mediasGuide;
-	}
-
-
-	public void setMedias(byte[] mediasGuide) {
-		this.mediasGuide = mediasGuide;
-	}
-
-	
-
 	public byte[] getMediasGuide() {
 		return mediasGuide;
 	}
@@ -128,7 +116,6 @@ public class Guide implements Serializable {
 		this.commentairesGuide = commentairesGuide;
 	}
 
-	
 
 	public User getUserGui() {
 		return userGui;
@@ -143,9 +130,11 @@ public class Guide implements Serializable {
 	@Override
 	public String toString() {
 		return "Guide [idGuide=" + idGuide + ", descriptionGuide=" + descriptionGuide + ", paysGuide=" + paysGuide
-				+ ", villeGuide=" + villeGuide + ", prixGuide=" + prixGuide + ", mediasGuide=" + Arrays.toString(mediasGuide)
-				+ "]";
+				+ ", villeGuide=" + villeGuide + ", prixGuide=" + prixGuide + ", mediasGuide="
+				+ Arrays.toString(mediasGuide) + ", commentairesGuide=" + commentairesGuide + "]";
 	}
+
+
 	
 	
 }
